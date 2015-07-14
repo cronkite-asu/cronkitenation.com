@@ -1,4 +1,4 @@
-<?php get_header( 'buddypress' ); ?>
+<?php get_header(); ?>
 <?php $url = home_url(); ?>
 
 <script type="text/javascript">
@@ -416,7 +416,7 @@
 		</div><!-- .padder -->
 	</div><!-- #content -->
 
-	<?php get_sidebar( 'buddypress' ); ?>
+	<?php get_sidebar(); ?>
 
 	<script type="text/javascript">
 		jQuery(document).ready( function() {
@@ -429,4 +429,4 @@
 		});
 	</script>
 
-<?php get_footer( 'buddypress' ); ?>
+<?php get_footer(); ?>

@@ -45,8 +45,8 @@ if (!empty($authors))
 
 	<?php do_action( 'bp_after_directory_members_page' ); ?>
 
-<?php get_sidebar( 'buddypress' ); ?>
-<?php get_footer( 'buddypress' ); ?>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
 <?php } else {?>
 <p>erm?</p>
 <?php } ?>

@@ -4,7 +4,7 @@
 
 <?php if ( !(int)bp_get_option( 'bp-disable-avatar-uploads' ) ) : ?>
 
-	<p><img src="/wp-content/plugins/buddypress/bp-themes/bp-default/members/single/profile/instructions.gif"></p>
+	<p><img src="<?php echo get_template_directory(); ?>/buddypress/members/single/profile/instructions.gif"></p>
 
 	<form action="" method="post" id="avatar-upload-form" class="standard-form" enctype="multipart/form-data">
 
@@ -21,7 +21,7 @@
 
 			<?php if ( bp_get_user_has_avatar() ) : ?>
 				<br />
-				<img src="/wp-content/plugins/buddypress/bp-themes/bp-default/members/single/profile/deleteheadshot.gif">
+				<img src="<?php echo get_template_directory(); ?>/buddypress/members/single/profile/deleteheadshot.gif">
 				<p>WARNING: This cannot be undone!</p>
 				<p><a class="button edit" href="<?php bp_avatar_delete_link(); ?>" title="<?php _e( 'Delete Avatar', 'buddypress' ); ?>">Delete Current Headshot</a></p>
 			<?php endif; ?>

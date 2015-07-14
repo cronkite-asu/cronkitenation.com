@@ -7,7 +7,7 @@
  * @subpackage bp-default
  */
 
-get_header( 'buddypress' ); ?>
+get_header(); ?>
 
 	<div id="content">
 		<div class="padder">
@@ -16,7 +16,7 @@ get_header( 'buddypress' ); ?>
 
 			<div id="item-header">
 
-				<?php locate_template( array( 'members/single/member-header.php' ), true ); ?>
+				<?php locate_template( array( 'buddypress/members/single/member-header.php' ), true ); ?>
 
 			</div><!-- #item-header -->
 
@@ -107,6 +107,6 @@ get_header( 'buddypress' ); ?>
 		</div><!-- .padder -->
 	</div><!-- #content -->
 
-<?php get_sidebar( 'buddypress' ); ?>
+<?php get_sidebar(); ?>
 
-<?php get_footer( 'buddypress' ); ?>
+<?php get_footer(); ?>

@@ -176,7 +176,7 @@ div#body{
 }
     </style>
 
-						<?php edit_post_link( __( 'Edit this page.', 'buddypress' ), '<p class="edit-link">', '</p>'); ?>
+						<?php edit_post_link( __( 'Edit this page.', 'cronkitenation' ), '<p class="edit-link">', '</p>'); ?>
 
 					</div>
 
@@ -210,7 +210,7 @@ div#body{
 		<div id="load_message"></div>
 		<div id="sidebar-mapload"></div>
 		<div id="sidebar-mapsingle" style="display: none;">
-			<img id="profile_avatar" src="<?php echo esc_url( $url ) ?>/wp-content/plugins/buddypress/bp-core/images/mystery-man.jpg">
+			<i class="fa fa-user fa-5x"></i>
 			<h4><span id="firstname">Oops</span> <span id="lastname">!</span></h4>
 			<h5><span id="jobtitle">We're having some technical difficulties</span> at <span id="employer">the moment</span></h4>
 			<h5><span id="city">Please refresh the page</span></h5>
@@ -303,7 +303,7 @@ div#body{
 		
 			<p id="login-text">
 
-				<?php// printf( __( 'Are you an alum looking to get listed? <a href="%s" title="Create an account">Create an account</a> to get started.', 'buddypress' ), bp_get_signup_page() ); ?>
+				<?php// printf( __( 'Are you an alum looking to get listed? <a href="%s" title="Create an account">Create an account</a> to get started.', 'cronkitenation' ), bp_get_signup_page() ); ?>
  				
 			Are you an alum looking to get listed?	<a href="<?php echo bp_get_signup_page(); ?>"><input type="submit" name="wp-submit" title="Create an account" value="Create an account" tabindex="100"/></a> to get started.
 			</p>
@@ -352,7 +352,7 @@ div#body{
 						<label for="remember">Keep me signed in</label><br />
 						<a style="font-size:11px;padding-top:-3px;" href="<?php echo site_url( add_query_arg( array( 'action' => 'lostpassword' ), 'wp-login.php' ), 'login' ); ?>">Reset Password</a>
 						<?php do_action( 'bp_sidebar_login_form' ); ?>
-						<input type="submit" name="wp-submit" value="<?php _e( 'Log In', 'buddypress' ); ?>" tabindex="100"/>
+						<input type="submit" name="wp-submit" value="<?php _e( 'Log In', 'cronkitenation' ); ?>" tabindex="100"/>
 						<input type="hidden" name="testcookie" value="1" />
 					</div>
 				</fieldset>

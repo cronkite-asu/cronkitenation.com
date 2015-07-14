@@ -117,7 +117,7 @@
 <?php else: ?>
 
 	<div id="message" class="info">
-		<p><?php _e( "Sorry, no members were found.", 'buddypress' ); ?></p>
+		<p><?php _e( "Sorry, no members were found.", 'cronkitenation' ); ?></p>
 	</div>
 
 <?php endif; ?>
@@ -139,8 +139,8 @@
 
 	<?php do_action( 'bp_after_directory_members_page' ); ?>
 
-<?php get_sidebar( 'buddypress' ); ?>
-<?php get_footer( 'buddypress' ); ?>
+<?php get_sidebar( 'cronkitenation' ); ?>
+<?php get_footer( 'cronkitenation' ); ?>
 <?php } else {?>
 <p>erm?</p>
 <?php } ?>

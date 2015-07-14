@@ -9,7 +9,8 @@ if ( function_exists( 'yoast_analytics' ) ) {
 ?>
 		<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
 		<?php if ( current_theme_supports( 'bp-default-responsive' ) ) : ?><meta name="viewport" content="width=device-width, initial-scale=1.0" /><?php endif; ?>
-		<title><?php if(bp_is_user_profile()) {?><?php bp_member_profile_data( 'field=First Name' ); ?> <?php bp_member_profile_data( 'field=Last Name' ); ?> | Cronkite Nation <?php } elseif(bp_is_directory()) { ?>Alumni Directory | Cronkite Nation<?php } elseif(bp_is_front_page()) { ?>Alumni Map - The Cronkite School | Cronkite Nation <?php } else { ?>Cronkite Nation <?php } ?></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 		<!-- START /asuthemes/4.0/heads/default_white.shtml -->

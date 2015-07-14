@@ -9,7 +9,6 @@
 
 		<div class="page" id="blog-latest" role="main">
 
-			
 		</div>
 
 		<?php do_action( 'bp_after_blog_home' ); ?>

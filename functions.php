@@ -3,7 +3,41 @@
  * Cronkite News theme functions and definitions
  *
  */
-add_filter( 'show_admin_bar', '__return_false' );
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ *
+ * Used to set the width of images and content. Should be equal to the width the theme
+ * is designed for, generally via the style.css stylesheet.
+ */
+
+// If BuddyPress is not activated, switch back to the default WP theme and bail out
+if ( ! function_exists( 'bp_is_active' ) ) {
+	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
+	return;
+}
+
+if ( ! isset( $content_width ) )
+	$content_width = 640; /* pixels */
+
+
+if ( ! function_exists( 'cronkitenation_theme_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress and BuddyPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which runs
+ * before the init hook. The init hook is too late for some features, such as indicating
+ * support post thumbnails.
+ *
+ */
+function cronkitenation_theme_setup() {
+	// This theme styles the visual editor with editor-style.css to match the theme style.
+	add_editor_style();
+
+	// Add default posts and comments RSS feed links to head
+	add_theme_support( 'automatic-feed-links' );
+}
+add_action( 'after_setup_theme', 'cronkitenation_theme_setup' );
+endif;
 
 function cronkitenation_login_logo() {
     echo '<style type="text/css">';
@@ -16,8 +50,17 @@ function cronkitenation_login_logo() {
 	echo '}';
     echo '</style>';
 }
-
 add_action('login_head', 'cronkitenation_login_logo');
+
+function loginpage_custom_link() {
+	return home_url();
+}
+add_filter('login_headerurl','loginpage_custom_link');
+
+function change_title_on_logo() {
+	return 'New Media Innovation Lab | Walter Cronkite School of Journalism and Mass Communication at Arizona State University';
+}
+add_filter('login_headertitle', 'change_title_on_logo');
 
 function cronkitenation_add_scripts() {
     wp_register_script( 'html5shiv', 'https://html5shiv.googlecode.com/svn/trunk/html5.js', array(), null, true );
@@ -57,16 +100,24 @@ function cronkitenation_add_styles() {
 		'family' => 'Roboto:400,300,500,700,900'
 	);
 	$protocol = is_ssl() ? 'https' : 'http';
+	wp_register_style( 'cronkitenation-style', get_stylesheet_uri() );
  
  	// A safe way to register a CSS style file for later use
 	wp_register_style( 'google-fonts', add_query_arg( $query_args, $protocol . "://fonts.googleapis.com/css" ) );
     wp_register_style( 'font-awesome', $protocol . '://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' ); 
 	
 	// A safe way to add/enqueue a CSS style file to a WordPress generated page
+	wp_enqueue_style( 'cronkitenation-style' );
 	wp_enqueue_style( 'google-fonts' );
     wp_enqueue_style('font-awesome'); 
 }
 add_action( 'wp_enqueue_scripts', 'cronkitenation_add_styles' );
+
+function cronkitenation_hide_admin_bar() {
+	if ( ! is_admin() )
+		add_filter( 'show_admin_bar', '__return_false' );
+}
+add_action( 'after_setup_theme', 'cronkitenation_hide_admin_bar' );
 
 function cronkitenation_adjust_post_types() {
 	// remove some default post types

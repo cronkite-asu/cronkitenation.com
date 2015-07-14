@@ -75,8 +75,7 @@ a.tooltip {outline:none;text-decoration:none;border-bottom:dotted 1px #ffb310;}
 		-o-box-shadow: inset 0 1px 0 #fff;
 		box-shadow: inset 0 1px 0 #fff;
 			
-		display: none\0/;
-		*display: none;
+		display: none;
 	}
     
 a.tooltip > span {
@@ -85,7 +84,6 @@ a.tooltip > span {
 	background: #fed88b;
 	background: -moz-linear-gradient(top, #fff6e5 0%, #fed88b 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff6e5), color-stop(100%,#fed88b));
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff6e5', endColorstr='#fed88b',GradientType=0 );
 	    
 	border: 1px solid #CFB57C;	     
 }    
@@ -100,7 +98,7 @@ a.tooltip span b {
 
 		<div class="bp-widget alumni-profile">
 			<div style="float:right;"><?php global $bp ?>
-			<?php $editurl = $bp->displayed_user->domain; if ( is_user_logged_in() && is_super_admin() ) { ?><a class="button" href="<?php echo esc_url( editurl ); ?>profile/edit/">Admin Edit Profile</a> <a class="button" href="<?php echo esc_url( $editurl ); ?>profile/change-avatar/">Admin Upload Headshot</a><?php } ?>
+			<?php $editurl = $bp->displayed_user->domain; if ( is_user_logged_in() && is_super_admin() ) { ?><a class="button" href="<?php echo esc_url( $editurl ); ?>profile/edit/">Admin Edit Profile</a> <a class="button" href="<?php echo esc_url( $editurl ); ?>profile/change-avatar/">Admin Upload Headshot</a><?php } ?>
 			</div>
 		<table class="profile-fields">
 			<tr class="field_1 field_first-name">
@@ -197,7 +195,7 @@ a.tooltip span b {
 			<tr class="field_2044 field_twitter">	
 				<td class="label">Twitter:</td>
 				<td class="data">
-				<a href="https://twitter.com/<?php echo esc_url( $twitter ); ?>" class="twitter-follow-button" data-show-count="true" data-size="large" target="_blank">Loading Twitter...</a>
+				<a href="https://twitter.com/<?php echo esc_html( $twitter ); ?>" class="twitter-follow-button" data-show-count="true" data-size="large" target="_blank">Loading Twitter...</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</td>
 			</tr>
@@ -240,7 +238,7 @@ a.tooltip span b {
 
 </div>
 <?php if ( $RSSfeed = bp_get_profile_field_data( 'field=RSS Feed' ) ) : ?>	
-<h2 style="float:left;display:inline;padding-top:10px;"><?php bp_profile_field_data( 'field=First Name' );?>'s Latest Stories</h2><a href="<?php echo esc_url( $RSSfeed ); ?>"><img style="display:inline;float:right;height:32px;width:32px;" src="<?php echo esc_url( $url ); ?>/wp-content/plugins/buddypress/bp-themes/bp-default/members/single/profile/rss.png" /></a><hr>
+<h2 style="float:left;display:inline;padding-top:10px;"><?php bp_profile_field_data( 'field=First Name' );?>'s Latest Stories</h2><a href="<?php echo esc_url( $RSSfeed ); ?>"><img style="display:inline;float:right;height:32px;width:32px;" src="<?php echo get_template_directory(); ?>/buddypress/members/single/profile/rss.png" /></a><hr>
 <?php include_once(ABSPATH.WPINC.'/rss.php'); // path to include built-in WordPress RSS script
 $RSSurl = $RSSfeed;
 $feed = fetch_rss($RSSurl); // specify feed url
