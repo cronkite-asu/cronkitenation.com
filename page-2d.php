@@ -17,7 +17,7 @@ get_header();
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 				<h2 class="pagetitle"><?php the_title(); ?></h2>
-				<h6 style="float:right;text-align:right;display:inline;margin-top:-20px;"><a href="<?php echo esc_url( $url ); ?>?3d">3-D Map &raquo;</a></h6>
+				<h6 style="float:right;text-align:right;display:inline;margin-top:-20px;"><a href="<?php echo esc_url( $url ); ?>?3d">3-D Map <i class="fa fa-angle-double-right"></i></a></h6>
 <br />
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -119,7 +119,7 @@ function makeMarker(alumn) {
 		var content = '<div style="text-align: left; font:Helvetica Neue,Helvetica,Arial;letter-spacing:-1px;font-size:28px;line-height:1.1em;"><b><a style="color:#000;" href="' + dname[8] + '">' + dname[0] + ' ' + dname[1] + '</a></b></div>';
 		content += '<img src="' + dname[7] + '" style="width:105px;height:105px;margin-left:auto;margin-right:auto;"/><div class="linkbutton"><a style="font:Helvetica Neue,Helvetica,Arial;letter-spacing:-1px;font-size:21px;line-height:1.1em;" href="/alumni/?s=&quot;' + dname[6] + '&quot;" target="_blank">' + dname[6] +'</a>';
 		content += ' <span style="style="font:Helvetica Neue,Helvetica,Arial;letter-spacing:-1px;font-size:20px;line-height:1.3em;">at</span> <a style="font:Helvetica Neue,Helvetica,Arial;letter-spacing:-1px;font-size:21px;line-height:1.3em;" href="/alumni/?s=&quot;' + dname[2] + '&quot;">' + dname[2] + '</a></div>';
-		content += '<br /><div class="linkbutton"><a style="font:Helvetica Neue,Helvetica,Arial;letter-spacing:-1px;font-size:20px;line-height:1.1em;" href="/alumni/?s=&quot;' + city_state + '&quot;" target="_blank">' + city_state + '</a></div><div class="linkbutton"><a style="padding-top:10px;font:Helvetica Neue,Helvetica,Arial;letter-spacing:-1px;font-size:20px;line-height:1.1em;font-weight:bold;text-align:right;float:right;" href="' + dname[8] + '" id="zoomLink">See full profile &raquo;</a></div></div>';
+		content += '<br /><div class="linkbutton"><a style="font:Helvetica Neue,Helvetica,Arial;letter-spacing:-1px;font-size:20px;line-height:1.1em;" href="/alumni/?s=&quot;' + city_state + '&quot;" target="_blank">' + city_state + '</a></div><div class="linkbutton"><a style="padding-top:10px;font:Helvetica Neue,Helvetica,Arial;letter-spacing:-1px;font-size:20px;line-height:1.1em;font-weight:bold;text-align:right;float:right;" href="' + dname[8] + '" id="zoomLink">See full profile <i class="fa fa-angle-double-right"></i>' + '</a></div></div>';
 	} else {
 		var cities = [];
 		for (i in alumn.geometry.properties["names"]){

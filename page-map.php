@@ -128,10 +128,6 @@ if (!array_key_exists("3d", $_GET)){
     </div>
 
  <?php
- 	wp_enqueue_script('d3_script');
-	wp_enqueue_script('d3_geo_script');
-	wp_enqueue_script('cn_map');
-
 	$map_params = array();
 	$map_params['site_url']= $url;
 	$map_params['stylesheet_directory']= get_stylesheet_directory_uri();
@@ -201,11 +197,11 @@ div#body{
 	<form role="search" method="get" id="mapsearchform" action=""><input type="text" value="<?php echo stripslashes(htmlspecialchars($_GET["map_search"])) ?>" name="map_search" id="s" style="width: 125px;" />
 	<input type="submit" id="searchsubmit" value="Search Map"/>
 	<?php do_action( 'bp_blog_search_form' ); ?><br />
-	<a href="<?php echo esc_url( $url ); ?>/alumni">or search alumni directory &raquo;</a>
+	<a href="<?php echo esc_url( $url ); ?>/alumni">or search alumni directory <i class="fa fa-angle-double-right"></i></a>
 	</form>
 	<div class="padder" style="padding-top: 0; margin-top: 10px; border-left: 1px solid #000;">
 	<?php do_action( 'bp_inside_before_sidebar' ); ?>
-	<div style="margin:5px -20px 0px -19px;background:#4f5557;text-align:center;"><a href="<?php echo esc_url( $url ); ?>/2d" style="font-weight:800;color:#ffb310;margin-top:-5px;font-size:13px;">2-D Map &raquo;</a></div>
+	<div style="margin:5px -20px 0px -19px;background:#4f5557;text-align:center;"><a href="<?php echo esc_url( $url ); ?>/2d" style="font-weight:800;color:#ffb310;margin-top:-5px;font-size:13px;">2-D Map <i class="fa fa-angle-double-right"></i></a></div>
 	<div id="idbg">
 		<div id="load_message"></div>
 		<div id="sidebar-mapload"></div>
@@ -214,14 +210,14 @@ div#body{
 			<h4><span id="firstname">Oops</span> <span id="lastname">!</span></h4>
 			<h5><span id="jobtitle">We're having some technical difficulties</span> at <span id="employer">the moment</span></h4>
 			<h5><span id="city">Please refresh the page</span></h5>
-			<span class="calltoaction"><a id="profile_url" href="<?php echo esc_url( $url ); ?>" >See full profile &raquo;</a></span>
+			<span class="calltoaction"><a id="profile_url" href="<?php echo esc_url( $url ); ?>" >See full profile <i class="fa fa-angle-double-right"></i></a></span>
 		</div><br /><br />
 		<div id="sidebar-mapgroup" style="display: none;">
 			<h5 style="font-size:28px;">Displaying</h5>
 			<h4>145</h4>
 			<h5 style="font-size:22px;padding-bottom:10px;">Cronkite alumni in:</h5>
 			<span style="text-align:left;margin-left:30px;color:#ffb310;font-size:14px;font-weight:700;width:85%;"><span id="groupcity"><ul style="list-style-type:square;text-align:left;">GroupCity</span><br /></span>
-			<!--<span class="calltoaction"><a id="group_in_dir" href="<?php echo esc_url( $url ); ?>" >See in directory &raquo;</a></span>-->
+			<!--<span class="calltoaction"><a id="group_in_dir" href="<?php echo esc_url( $url ); ?>" >See in directory <i class="fa fa-angle-double-right"></i></a></span>-->
 			<form role="search" method="get" id="searchgroup" action="/alumni/">
 				<input type="hidden" value="" name="s" id="s" >
 				</form>

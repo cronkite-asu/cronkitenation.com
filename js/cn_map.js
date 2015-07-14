@@ -198,11 +198,11 @@ function update_sidebar_info_group(centered){
 		var dname = centered.geometry.properties["names"][i];
 		var ht_val;
 		if (dname[4] == "Outside U.S."){
-			ht_val = '<li><a style="color:#fff;border-bottom:1px dotted #ffb310;" href="/alumni/?s=&quot;' + dname[3] + ", " + dname[5] + '&quot;">' + dname[3] + ", " + dname[5] + ' &raquo;</a>';
+			ht_val = '<li><a style="color:#fff;border-bottom:1px dotted #ffb310;" href="/alumni/?s=&quot;' + dname[3] + ", " + dname[5] + '&quot;">' + dname[3] + ", " + dname[5] + ' <i class="fa fa-angle-double-right"></i>' + '</a>';
 		} else  if (dname[4] == "Washington D.C."){
-			ht_val = '<li><a style="color:#fff;border-bottom:1px dotted #ffb310;" href="/alumni/?s=&quot;' + dname[3] + ", " + dname[4] + '&quot;">' + dname[3] + ' &raquo;</a>';
+			ht_val = '<li><a style="color:#fff;border-bottom:1px dotted #ffb310;" href="/alumni/?s=&quot;' + dname[3] + ", " + dname[4] + '&quot;">' + dname[3] + ' <i class="fa fa-angle-double-right"></i> ' + '</a>';
 		} else {
-			ht_val = '<li><a style="color:#fff;border-bottom:1px dotted #ffb310;" href="/alumni/?s=&quot;' + dname[3] + ", " + dname[4] + '&quot;">' + dname[3] + ", " + dname[4] + ' &raquo;</a>';
+			ht_val = '<li><a style="color:#fff;border-bottom:1px dotted #ffb310;" href="/alumni/?s=&quot;' + dname[3] + ", " + dname[4] + '&quot;">' + dname[3] + ", " + dname[4] + ' <i class="fa fa-angle-double-right"></i>' + '</a>';
 		}
 		
 		if (cities.indexOf(ht_val) < 0){
