@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">	
+	<title>Registration | Theme 2</title>
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="ui/jquery-ui.css" />
+	
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+
+	<script src="js/addons.js"></script>
+</head>
+
+<body>
+	<div id="main">
+		<div id="left_side">
+			<div id="container">
+				
+				<hgroup>
+					<h2>cronkite alumni account registration</h2>
+					<h3>Keeping The Cronkite School and your fellow alumni apprised of your career is easier than ever with Cronkite Nation. Just fill in the fields below and we'll get a new account set up for you in no time.</h3>
+				</hgroup>
+				
+				<article id="article">
+					<form class="form">
+						<fieldset>
+							<h4><span>1</span>Personal information:</h4>
+							
+							<!-- Labels are dafault placed on to, to place its inline, you must add the class "inner_labels" to the div class="row". Instead of main label you can use span class="label" -->
+							<!-- example: 
+								<div class="row inner_labels"> 
+									<span class="label">New label:</span>
+									..
+							-->
+
+							<div class="row">
+								<div class="item">
+									<label for="FirstName">First name:<em>*</em></label>
+									<input type="text" id="FirstName" value="" />
+									<!-- To mark the incorrectly filled input, you must add the class "error" to the input -->
+									<!-- example: <input type="text" id="FirstName" class="error" value="" /> -->
+								</div>
+								<div class="item last">
+									<label for="MiddleName">Middle name:<em>*</em></label>
+									<input type="text" id="MiddleName" value="" />
+								</div>
+							</div>
+							
+							<!-- To place to item groups in one row use "item" containers (2nd mast have class "last") -->
+							<!-- example: 
+								<div class="row">
+									<div class="item">
+									..
+									</div>
+									<div class="item last">
+									..
+									</div>
+								</div>
+							 -->
+							<div class="row">
+								<div class="item">
+									<label for="City">Last Name:</label>
+									<input type="text" id="City" value="" />
+								</div>
+								<div class="item last">
+									<label for="Country">Country:</label>
+									<select id="Country">
+										<option>United States</option>
+										<option>Switzerland</option>
+										<option>Monaco</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="item">
+									<label for="Datepicker">Date of birth:<em>*</em></label>
+									<input type="text" id="Datepicker" value="" />
+								</div>
+								<div class="item last" id="ageSlider">
+									<label for="Age">Age:</label>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="item">
+									<!-- To use tooltip for label place code below onto label tag -->
+									<!-- example: <label for="">Label:<a href="javascript:;" class="tooltip" title="place yout text here"></a></label> -->
+									<label for="Company">Company:<a href="javascript:;" class="tooltip" title="Lorem ipsum dolor sit amet enim.<br />Etiam ullamcorper. Suspendisse<br />a pellentesque dui, non felis."></a></label>
+									<input type="text" id="Company" value="" />
+								</div>
+								<div class="item inner_labels last">
+									<span class="label">What is your pet?</span>
+									<input type="checkbox" id="Cb_dog" value="" />
+									<label for="Cb_dog">Dog</label>
+									<input type="checkbox" id="Cb_cat" value="" />
+									<label for="Cb_cat">Cat</label>
+									<input type="checkbox" id="Cb_hamster" value="" />
+									<label for="Cb_hamster">Hamster</label>
+								</div>
+							</div>
+							
+						</fieldset>
+						
+						<fieldset>
+							<h4><span>2</span>Account information:</h4>	
+									
+							<div class="row">
+								<div class="item">
+									<label for="Username">Choose an username:<em>*</em></label>
+									<input type="text" id="Username" value="" />
+									<p class="hint">Your username can only contain letter A-Z or numbers 0-9</p>
+								</div>
+								<div class="item last">
+									<label for="Email">E-mail address:<em>*</em></label>
+									<input type="text" id="Email" value="" />
+									<p class="hint">We need to email you to confirm your account</p>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="item">
+									<label for="Password">Choose password:<em>*</em></label>
+									<input type="password" id="Password" value="" />
+									<p class="hint">Must be at least 8 characters long with no spaces</p>
+								</div>
+								<div class="item last">
+									<label for="Password2">Re-enter password:<em>*</em></label>
+									<input type="password" id="Password2" value="" />
+								</div>
+							</div>
+							
+						</fieldset>
+						
+						<fieldset>
+							<h4><span>3</span>A few words about yourself:</h4>						
+							<div class="row">
+								<textarea></textarea>
+							</div>
+						</fieldset>
+						
+						<fieldset>
+							<h4><span>4</span>Terms & Conditions:</h4>						
+							<div class="row inner_labels">
+								<input type="checkbox" id="Terms" value="" />
+								<label for="Terms">By clicking this button, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label>
+							</div>
+							<div class="submit">
+								<input type="submit" value="Create my account" />
+							</div>
+						</fieldset>
+						
+					</form>	
+					
+				</article>
+				
+			</div>
+			<span class="copy">Copyright © 2011 Application name</span>
+		</div>
+					
+		<aside>
+			
+			<h5>Already have an account?</h5>
+			<a class="login" href="http://codecanyon.net/item/easy-to-use-html5-css3-login-panel/861087">Let`s log in now</a>
+
+			<h5>Why sign up?</h5>
+			
+			<div class="item">
+				<h6>It`s free and easy</h6>
+				<p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentes.</p>
+			</div>
+			<div class="item">
+				<h6>No Credit Card required</h6>
+				<p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentes.</p>
+			</div>
+			<div class="item">
+				<h6>Professional support</h6>
+				<p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentes.</p>
+			</div>
+			<div class="item">
+				<h6>Interesting content</h6>
+				<p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentes.</p>
+			</div>
+			<div class="item">
+				<h6>Only hot offers</h6>
+				<p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentes.</p>
+			</div>
+			<div class="item last">
+				<h6>Competitions with prizes</h6>
+				<p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentes.</p>
+			</div>
+			
+		</aside>
+		
+			
+		
+	</div>
+</body>
+</html>
