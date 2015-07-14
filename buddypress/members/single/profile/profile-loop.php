@@ -105,60 +105,81 @@ a.tooltip span b {
 				<td class="label">Full Name:</td>
 				<td class="data"><p style="font-weight:bold;"><?php bp_profile_field_data( 'field=First Name' );?> <?php bp_profile_field_data( 'field=Middle Name' );?> <?php bp_profile_field_data( 'field=Last Name' );?> <?php if ( $maiden = bp_get_profile_field_data( 'field=Maiden Name' ) ) : ?><span style="font-weight:normal;">(<?php echo $maiden ?>)</span><?php endif ?></p></td>		
 			</tr>
-							
 			<tr class="field_2042 field_job-title">
 				<td class="label">Employment:<span style="color:#990033;font-weight:bold;font-size:14px;">*</span></td>
-				<td class="data"><p><a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Position at Primary Employer' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=Position at Primary Employer' );?><span>Search directory for:<br /><?php bp_profile_field_data( 'field=Position at Primary Employer' );?></span></a> at <a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Primary Employer' );?>&quot;" rel="nofollow" class="tooltip"><?php bp_profile_field_data( 'field=Primary Employer' );?><span><strong>Other alumni employed at:</strong><br /><?php bp_profile_field_data( 'field=Primary Employer' );?></span></a></p></td>
+				<td class="data">
+				<p>
+				<?php $pri = bp_get_profile_field_data( 'field=Position at Primary Employer' ) ?>
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_2042=') . urlencode( $pri ); ?>" class="tooltip" rel="nofollow">
+				<?php echo $pri ;?>
+				<span>Search directory for:<br /><?php echo $pri; ?></span></a> at
+				<?php $priemp = bp_get_profile_field_data( 'field=Primary Employer' ) ?>
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_2043=') . urlencode( $priemp ); ?>" rel="nofollow" class="tooltip">
+				<?php bp_profile_field_data( 'field=Primary Employer' );?><span><strong>Other alumni employed at:</strong><br />
+				<?php echo $priemp; ?></span></a></p></td>
 			</tr>
-			<?php if ( $secemp = bp_get_profile_field_data( 'field=Position at Secondary Employer' ) ) : ?>
+			<?php if ( $sec = bp_get_profile_field_data( 'field=Position at Secondary Employer' ) ) : ?>
 			<tr class="field_2044 field_job-title-2">
 				<td class="label"></td>
-				<td class="data"><p><a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php echo $secemp?>&quot;" class="tooltip" rel="nofollow"><?php echo $secemp?><span>Search directory for:<br /><?php echo $secemp?></span></a> at <a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Secondary Employer' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=Secondary Employer' );?><span>Other alumni employed at:<br /><?php bp_profile_field_data( 'field=Secondary Employer' );?></span></a></p></td>
+				<td class="data"><p>
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_2168=') . urlencode( $sec ); ?>" class="tooltip" rel="nofollow"><?php echo $sec ?>
+				<span>Search directory for:<br /><?php echo $sec ?></span></a> at 
+				<?php $secemp = bp_get_profile_field_data( 'field=Secondary Employer' ) ?>
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_2169=') . urlencode( $secemp ); ?>" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=Secondary Employer' );?>
+				<span>Other alumni employed at:<br /><?php echo $secemp;?></span></a></p></td>
 			</tr>
 			<?php endif ?>
-			<tr class="field_1524 field_city">		
+			<tr class="field_1524 field_city">	
 					<td class="label">Location:<span style="color:#990033;font-weight:bold;font-size:14px;">*</span></td>	
 					<td class="data">
-							<a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_profile_field_data( 'field=City' );?>, <?php bp_profile_field_data( 'field=U.S. State / Territory' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=City' );?><span>Other alumni employed in:<br /><?php bp_profile_field_data( 'field=City' );?></span></a><?php $state = bp_get_member_profile_data( "field=U.S. State / Territory" ); if ( $state == "Washington D.C." ) {} elseif ($state =="Outside U.S.") {} else { ?>, <a href="<?php echo esc_url( $url ); ?>/alumni/?s=<?php echo $state ?>" class="tooltip" rel="nofollow"><?php echo $state ?><span>Other alumni living in:<br /><?php echo $state ?></span></a><?php } ?>, <a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_member_profile_data( 'field=Country' );?>&quot;" class="tooltip" rel="nofollow"><span>Other alumni living in:<br /><?php bp_profile_field_data( 'field=Country' );?></span><?php echo bp_member_profile_data( 'field=Country' );?></a></p></td>
+							<?php $city = bp_get_profile_field_data( 'field=City' ) ?>
+							<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_1524=') . urlencode( $city ); ?>" class="tooltip" rel="nofollow"><?php echo $city; ?>
+							<span>Other alumni employed in:<br /><?php echo $city; ?></span></a>
+							<?php $state = bp_get_member_profile_data( "field=U.S. State / Territory" ); if ( $state == "Washington D.C." ) {} elseif ($state =="Outside U.S.") {} else { ?>, 
+							<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_1525=') . urlencode( $state ); ?>" class="tooltip" rel="nofollow"><?php echo $state ?>
+							<span>Other alumni living in:<br /><?php echo $state ?></span></a><?php } ?>,
+							<?php $country = bp_get_profile_field_data( 'field=Country' ) ?>
+							<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_1644=') . urlencode( $country ) ; ?>" class="tooltip" rel="nofollow">
+							<span>Other alumni living in:<br /><?php echo $country; ?></span><?php echo $country; ?></a></p></td>
 			</tr>
-			
 			<tr class="field_173 field_years-of-graduation">
 				<td class="label">Graduating Class:</td>
-				<?php
-				$gyear = bp_get_profile_field_data( 'field=Graduating Class' );
-				?>
-				<td class="data"><p><a href="<?php echo esc_url( $url ); ?>/alumni/?s=<?php echo $gyear[0];?>" rel="nofollow" class="tooltip">
-				<?php echo $gyear[0];?><span><strong>Search alumni directory for:</strong><br />Class of <?php echo $gyear[0];?></span></a><?php if ($gyear[1] != '') { ?>,
-				<a href="<?php echo esc_url( $url ); ?>/alumni/?s=<?php echo $gyear[1];?>" rel="nofollow" class="tooltip">
-				<?php echo $gyear[1];?><span><strong>Search alumni directory for:</strong><br />Class of <?php echo $gyear[1];?></span></a> <?php } ?>
+				<?php $gyear = bp_get_profile_field_data( 'field=Graduating Class' ); ?>
+				<td class="data"><p><a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_173=') . urlencode( $gyear[0] ); ?>" rel="nofollow" class="tooltip">
+				<?php echo $gyear[0];?><span><strong>Search alumni directory for:</strong><br />Class of <?php echo $gyear[0];?></span></a>
+				<?php if ($gyear[1] != '') { ?>,
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_173=') . urlencode( $gyear[1] ); ?>" rel="nofollow" class="tooltip">
+				<?php echo $gyear[1];?><span><strong>Search alumni directory for:</strong><br />Class of <?php echo $gyear[1];?></span></a>
+				<?php } ?>
 				</p></td>
 			</tr>
 			<?php if ( $degreedisplay = bp_get_member_profile_data( 'field=Degree' ) ) : ?>
 			<tr class="field_304 field_degree">	
 				<td class="label">Degree:</td>
 				<?php $degree = bp_get_profile_field_data('field=Degree'); ?>
-				<td class="data"><a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php echo $degree[0]; ?>&quot;" rel="nofollow" class="tooltip">
+				<td class="data">
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_304=') . urlencode( $degree[0] ); ?>" rel="nofollow" class="tooltip">
 				<?php echo $degree[0];?><span><strong>Search directory for:</strong><br /><?php echo $degree[0];?></span></a><?php if ($degree[1] != '') { ?>,
-				<a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php echo $degree[1];?>&quot;" rel="nofollow" class="tooltip">
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_304=') . urlencode( $degree[1] ); ?>" rel="nofollow" class="tooltip">
 				<?php echo $degree[1];?><span><strong>Search directory for:</strong><br /><?php echo $degree[1];?></span></a> <?php } ?>
 				</td>
 			</tr>
 			<?php endif ?>
 			<?php if ( $inddisp = bp_get_profile_field_data( 'field=Industry (Comma-Separated)' ) ) : ?>
-			<tr class="field field_industry">	
+			<tr class="field field_industry">
 				<td class="label">Industry:</td>
 				<td class="data"><?php function industry_array($industries) { $industry = xprofile_get_field_data( 'Industry (Comma-Separated)' );
     						$industries = explode(',', $industry);
     						$industryarray = array();
    							foreach ($industries as $industry) {
         						if (empty($industry)) continue;
-       							$industryarray[] = '<a href="/alumni/?s='.trim($industry).'" class="tooltip">'.$industry.'<span>Search directory for:<br />'.$industry.'</span></a>';
+       							$industryarray[] = '<a href="' . esc_url( home_url() . '/alumni/?bp_profile_search&field_2594=' ) . urlencode( trim($industry) ) . '" class="tooltip">' . $industry . '<span>Search directory for:<br />' . $industry . '</span></a>';
     							}
     						return implode(', ', $industryarray);
 							} echo industry_array($industries) ?></td>
 			</tr>
 			<?php endif ?>
-			
+
 			<?php if ( $beatdisp = bp_get_profile_field_data( 'field=Beats (Comma-Separated)' ) ) : ?>
 			<tr class="field field_beat">	
 				<td class="label">Beats:</td>
@@ -167,7 +188,7 @@ a.tooltip span b {
     						$beatarray = array();
    							foreach ($beats as $beat) {
         						if (empty($beat)) continue;
-       							$beatarray[] = '<a href="/alumni/?s=&quot;'.trim($beat).'&quot;" class="tooltip">'.$beat.'<span>Search directory for:<br />'.$beat.'</span></a>';
+       							$beatarray[] = '<a href="' . esc_url( home_url() . '/alumni/?bp_profile_search&field_2593=' ) . urlencode( trim($beat) ) . '" class="tooltip">' . $beat . '<span>Search directory for:<br />' . $beat . '</span></a>';
     							}
     						return implode(', ', $beatarray);
 							} echo beat_array($beats) ?></td>
@@ -182,7 +203,7 @@ a.tooltip span b {
     						$skillarray = array();
    							foreach ($skills as $skill) {
         						if (empty($skill)) continue;
-       							$skillarray[] = '<a href="/alumni/?s=&quot;'.trim($skill).'&quot;" class="tooltip">'.$skill.'<span>Search directory for:<br />'.$skill.'</span></a>';
+       							$skillarray[] = '<a href="' . esc_url( home_url() . '/alumni/?bp_profile_search&field_2595=' ) . urlencode( trim($skill) ) . '" class="tooltip">' . $skill . '<span>Search directory for:<br />' . $skill . '</span></a>';
     							}
     						return implode(', ', $skillarray);
 							} echo skill_array($skills) ?></td>
@@ -228,17 +249,11 @@ a.tooltip span b {
 				<td class="data"><a href="<?php echo esc_url( $empurl ); ?>" target="_blank"><?php echo esc_url( $empurl ); ?></a></td>
 			</tr>
 			<?php endif ?>
-
-
-			
-			
-			
-	
 	</table>
 
 </div>
 <?php if ( $RSSfeed = bp_get_profile_field_data( 'field=RSS Feed' ) ) : ?>	
-<h2 style="float:left;display:inline;padding-top:10px;"><?php bp_profile_field_data( 'field=First Name' );?>'s Latest Stories</h2><a href="<?php echo esc_url( $RSSfeed ); ?>"><img style="display:inline;float:right;height:32px;width:32px;" src="<?php echo get_template_directory(); ?>/buddypress/members/single/profile/rss.png" /></a><hr>
+<h2 style="float:left;display:inline;padding-top:10px;"><?php bp_profile_field_data( 'field=First Name' );?>'s Latest Stories</h2><a href="<?php echo esc_url( $RSSfeed ); ?>"><i class="fa fa-rss-square fa-2x fa-fw"></i></a><hr>
 <?php include_once(ABSPATH.WPINC.'/rss.php'); // path to include built-in WordPress RSS script
 $RSSurl = $RSSfeed;
 $feed = fetch_rss($RSSurl); // specify feed url
