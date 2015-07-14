@@ -3,6 +3,13 @@
  * Cronkite News theme functions and definitions
  *
  */
+
+// If BuddyPress is not activated, switch back to the default WP theme and bail out
+if ( ! function_exists( 'bp_is_active' ) ) {
+	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
+	return;
+}
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
@@ -10,11 +17,6 @@
  * is designed for, generally via the style.css stylesheet.
  */
 
-// If BuddyPress is not activated, switch back to the default WP theme and bail out
-if ( ! function_exists( 'bp_is_active' ) ) {
-	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
-	return;
-}
 
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
@@ -65,7 +67,6 @@ add_filter('login_headertitle', 'change_title_on_logo');
 function cronkitenation_add_scripts() {
     wp_register_script( 'html5shiv', 'https://html5shiv.googlecode.com/svn/trunk/html5.js', array(), null, true );
     wp_register_script( 'googel_maps_api', 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true', array(), null, true );
-	wp_register_script('addons_js', get_stylesheet_directory_uri() . '/_inc/register/js/addons.js', array( 'jquery' ), '1.1', true);
 
 	wp_register_script('d3_script', get_stylesheet_directory_uri() . '/blogs/d3.v2.min.js', array( 'jquery' ), '2.0', true);
 	wp_register_script('d3_geo_script', get_stylesheet_directory_uri() . '/blogs/world_files/d3.geo.js', array( 'jquery', 'd3_script' ), '1.1', true);
@@ -84,7 +85,6 @@ function cronkitenation_add_scripts() {
 
 	wp_enqueue_script('html5shiv');
 	wp_enqueue_script('googel_maps_api');
-	wp_enqueue_script('addons_js');
 	wp_enqueue_script('infowindow_script');
 	wp_enqueue_script('asu_header');
 
