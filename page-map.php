@@ -204,7 +204,7 @@ div#body{
 	<div style="margin:5px -20px 0px -19px;background:#4f5557;text-align:center;"><a href="<?php echo esc_url( $url ); ?>/2d" style="font-weight:800;color:#ffb310;margin-top:-5px;font-size:13px;">2-D Map <i class="fa fa-angle-double-right"></i></a></div>
 	<div id="idbg">
 		<div id="load_message"></div>
-		<div id="sidebar-mapload"></div>
+		<div id="sidebar-mapload"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div>
 		<div id="sidebar-mapsingle" style="display: none;">
 			<i class="fa fa-user fa-5x"></i>
 			<h4><span id="firstname">Oops</span> <span id="lastname">!</span></h4>
@@ -229,21 +229,21 @@ div#body{
 	
 		<div id="ctrlwrap">
 				
-				<div id="sidebar-pp"></div>
-				
+				<div id="sidebar-pp" class="sidebar-control"><i class="fa fa-youtube-play fa-5x fa-fw"></i></div>
 		</div>
-		<div class="tweakControls" style="width: 100%;padding-bottom:10px; text-align: center; background-color: black;">
-				<div id="sidebar-back"></div>
-				<div id="sidebar-zout"></div>
-				<div id="sidebar-zin"></div>
-				<div id="sidebar-forward"></div>
-				
-				<div id="sidebar-up"></div><br />
-				
-				<div id="sidebar-left"></div>
-				<div id="sidebar-right"></div>
-				
-				<div id="sidebar-down"></div>
+		<div class="tweakControls">
+			<div id="sidebar-back" class="sidebar-control"><i class="fa fa-step-backward fa-3x fa-fw"></i></div>
+			<div id="sidebar-zout" class="sidebar-control"><i class="fa fa-search-minus fa-3x fa-fw"></i></div>
+			<div id="sidebar-zin" class="sidebar-control"><i class="fa fa-search-plus fa-3x fa-fw"></i></div>
+			<div id="sidebar-forward" class="sidebar-control"><i class="fa fa-step-forward fa-3x fa-fw"></i></div>
+			<br />
+
+			<div id="sidebar-up" class="sidebar-control"><i class="fa fa-chevron-circle-up fa-3x fa-fw"></i></div>
+
+			<div id="sidebar-left" class="sidebar-control"><i class="fa fa-chevron-circle-left fa-3x fa-fw"></i></div>
+			<div id="sidebar-right" class="sidebar-control"><i class="fa fa-chevron-circle-right fa-3x fa-fw"></i></div>
+
+			<div id="sidebar-down" class="sidebar-control"><i class="fa fa-chevron-circle-down fa-3x fa-fw"></i></div>
 		</div>
 	</div>
 
