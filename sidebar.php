@@ -42,7 +42,7 @@
 
 		<?php endif; ?>
 		
-		<div class="loginmain">
+	<div class="loginmain">
 		<div class="loginbox">
 			<form name="login-form" class="loginform" action="<?php echo site_url( 'wp-login.php', 'login_post' ); ?>" method="post">
 				<fieldset>
@@ -65,7 +65,6 @@
 				</fieldset>
 			</form>		
 		</div>
-		
 	</div>
 
 		<?php do_action( 'bp_after_sidebar_login_form' ); ?>

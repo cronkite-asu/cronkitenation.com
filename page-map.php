@@ -201,7 +201,7 @@ div#body{
 	<form role="search" method="get" id="mapsearchform" action=""><input type="text" value="<?php echo stripslashes(htmlspecialchars($_GET["map_search"])) ?>" name="map_search" id="s" style="width: 125px;" />
 	<input type="submit" id="searchsubmit" value="Search Map"/>
 	<?php do_action( 'bp_blog_search_form' ); ?><br />
-	<a href="/alumni">or search alumni directory &raquo;</a>
+	<a href="<?php echo esc_url( $url ); ?>/alumni">or search alumni directory &raquo;</a>
 	</form>
 	<div class="padder" style="padding-top: 0; margin-top: 10px; border-left: 1px solid #000;">
 	<?php do_action( 'bp_inside_before_sidebar' ); ?>
