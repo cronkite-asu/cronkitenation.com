@@ -68,10 +68,10 @@ function cronkitenation_add_scripts() {
     wp_register_script( 'html5shiv', 'https://html5shiv.googlecode.com/svn/trunk/html5.js', array(), null, true );
     wp_register_script( 'googel_maps_api', 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true', array(), null, true );
 
-	wp_register_script('d3_script', get_stylesheet_directory_uri() . '/blogs/d3.v2.min.js', array( 'jquery' ), '2.0', true);
-	wp_register_script('d3_geo_script', get_stylesheet_directory_uri() . '/blogs/world_files/d3.geo.js', array( 'jquery', 'd3_script' ), '1.1', true);
-	wp_register_script('cn_map', get_stylesheet_directory_uri() . '/blogs/world_files/cn_map.js', array( 'jquery', 'd3_geo_script' ), '1.1', true);
-	wp_register_script('infowindow_script', get_stylesheet_directory_uri() . '/blogs/infowindow.js', array( 'googel_maps_api' ), '1.1', true);
+	wp_register_script('d3_script', get_stylesheet_directory_uri() . '/js/d3.v2.min.js', array( 'jquery' ), '2.0', true);
+	wp_register_script('d3_geo_script', get_stylesheet_directory_uri() . '/js/d3.geo.js', array( 'jquery', 'd3_script' ), '1.1', true);
+	wp_register_script('cn_map', get_stylesheet_directory_uri() . '/js/cn_map.js', array( 'jquery', 'd3_geo_script' ), '1.1', true);
+	wp_register_script('infowindow_script', get_stylesheet_directory_uri() . '/js/infowindow.js', array( 'googel_maps_api' ), '1.1', true);
 	wp_register_script('asu_header', 'https://www.asu.edu/asuthemes/4.0/js/asu_header.min.js', array(), '4.0', true);
 	wp_register_script('jsapi', 'http://www.google.com/jsapi', array(), null, true);
 
