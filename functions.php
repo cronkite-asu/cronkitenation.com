@@ -88,6 +88,12 @@ function cronkitenation_add_scripts() {
 	wp_enqueue_script('infowindow_script');
 	wp_enqueue_script('asu_header');
 
+	if ( is_page_template( 'page-map.php' ) ) {
+ 		wp_enqueue_script('d3_script');
+		wp_enqueue_script('d3_geo_script');
+		wp_enqueue_script('cn_map');
+	}	
+
 	if ( is_page_template( 'page-2d.php' ) ) {
 		wp_enqueue_script('jsapi');
 	}	
