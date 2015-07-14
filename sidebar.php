@@ -1,11 +1,11 @@
 <?php do_action( 'bp_before_sidebar' ); ?>
-
+<?php $url = home_url(); ?>
 <div id="sidebar" role="complementary">
 	<div class="padder">
 
 	<?php do_action( 'bp_inside_before_sidebar' ); ?>
 	<div id="sidebar-logo">
-	<a href="http://cronkite.asu.edu" target="_blank"><img style="margin-left:-5px;" src="http://cronkitenation.com/wp-content/uploads/2012/10/WCSJ_B.png" /></a>
+	<a href="http://cronkite.asu.edu" target="_blank"><img style="margin-left:-5px;" src="<?php echo esc_url( $url ); ?>/wp-content/uploads/2012/10/WCSJ_B.png" /></a>
 	</div>
 	<?php if ( is_user_logged_in() ) : ?>
 		<h3 class="widgettitle">Welcome <?php echo bp_loggedin_user_fullname() ?></h3>
@@ -54,8 +54,8 @@
 
 .loginform .row input[type="text"], .loginform .row input[type="password"] { height:33px; line-height:33px; border:1px solid #c5c5c5; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; box-shadow: 0 0 5px rgba(0,0,0,.1), 0 2px 2px rgba(0,0,0,.1) inset; -moz-box-shadow: 0 0 5px rgba(0,0,0,.1), 0 2px 2px rgba(0,0,0,.1) inset; -webkit-box-shadow: 0 0 5px rgba(0,0,0,.1), 0 2px 2px rgba(0,0,0,.1) inset;}
 .loginform .row input[type="text"]:focus, .loginform .row input[type="text"]:hover, .form .row input[type="password"]:focus, .form .row input[type="password"]:hover { border:1px solid #c5c5c5; box-shadow: 0 0 5px rgba(0,0,0,.21), 0 2px 2px rgba(0,0,0,.1) inset; -moz-box-shadow: 0 0 5px rgba(0,0,0,.21), 0 2px 2px rgba(0,0,0,.1) inset; -webkit-box-shadow: 0 0 5px rgba(0,0,0,.21), 0 2px 2px rgba(0,0,0,.1) inset;}
-.loginform .row input.login { background:url(http://cronkitenation.com/wp-content/plugins/buddypress/bp-themes/bp-default/_inc/login/input_login.png) left center no-repeat #f5f5f5; width:152px; padding: 1px 5px 1px 45px;}
-.loginform .row input.password { background:url(http://cronkitenation.com/wp-content/plugins/buddypress/bp-themes/bp-default/_inc/login/input_password.png) left center no-repeat #f5f5f5; width:152px; padding: 1px 5px 1px 45px; }
+.loginform .row input.login { background:url(<?php echo get_stylesheet_directory_uri(); ?>/_inc/login/input_login.png) left center no-repeat #f5f5f5; width:152px; padding: 1px 5px 1px 45px;}
+.loginform .row input.password { background:url(<?php echo get_stylesheet_directory_uri(); ?>/_inc/login/input_password.png) left center no-repeat #f5f5f5; width:152px; padding: 1px 5px 1px 45px; }
 .loginform .row input.error { border:1px solid #eb9393; box-shadow: 0 0 5px #f7c4c4; -moz-box-shadow: 0 0 5px #f7c4c4; -webkit-box-shadow: 0 0 5px #f7c4c4; background-color:#fce4e4; }
 
 .loginform .row a.forgot { position:absolute; top:2px; right:10px; color:#909090; font-size:12px; text-shadow:1px 1px 1px #fff;}

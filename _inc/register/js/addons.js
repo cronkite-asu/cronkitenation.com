@@ -1,5 +1,5 @@
-$(function(){
-	
+(function($){
+$(function() {	
 	// datepicker
 	$("#Datepicker").datepicker({
 		showOn: "button",
@@ -32,5 +32,5 @@ $(function(){
         this.title = this.tmptitle;
         $("#tooltip").remove();  
     }); 
-
 });
+})(jQuery);

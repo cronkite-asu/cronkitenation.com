@@ -7,7 +7,7 @@
 		
 		<h2>Recently Added Alumni</h2>
 		<div style="float:right;"><?php do_action( 'bp_before_directory_members' ); ?>
-					<form role="search" method="get" id="searchform" action="<?php echo home_url(); ?>/alumni">
+					<form role="search" method="get" id="searchform" action="<?php echo esc_url( home_url() ); ?>/alumni">
 				<input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
 				<input type="submit" id="searchsubmit" value="Search Alumni Directory" />
 				<?php do_action( 'bp_blog_search_form' ); ?><br />

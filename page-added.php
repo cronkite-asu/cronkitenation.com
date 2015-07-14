@@ -33,7 +33,7 @@ if (!empty($authors))
         $baseurl = get_site_url();
         $time = $author_info->user_registered;
 
-        echo '<li>'.$bpfirstname.' '.$bplastname.' <a href="'.$baseurl.'/alumni/'.$username.'">'.$username.'</a>- '.$time.'</li>';
+        echo '<li>' . $bpfirstname . ' ' . $bplastname . ' <a href="' . esc_url( $baseurl . '/alumni/' . $username ) . '">' . $username .' </a>- ' . $time . '</li>';
 
     }
     echo '</ul>';

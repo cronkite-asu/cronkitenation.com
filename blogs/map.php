@@ -34,9 +34,10 @@ foreach ($alums as $alum)
 ?>
 <!DOCTYPE html>
 <meta charset="utf-8">
-<script type="text/javascript" src="d3.v2.min.js"></script>
-    <script type="text/javascript" src="./world_files/d3.geo.js"></script>
-
+<?php
+ 	wp_enqueue_script('d3_script');
+	wp_enqueue_script('d3_geo_script');
+?>
 <style>
 
 .background {

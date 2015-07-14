@@ -1,4 +1,5 @@
 <?php do_action( 'bp_before_profile_loop_content' ); ?>
+<?php $url = home_url(); ?>
 
 <?php if ( bp_has_profile() ) : ?>
 
@@ -99,7 +100,7 @@ a.tooltip span b {
 
 		<div class="bp-widget alumni-profile">
 			<div style="float:right;"><?php global $bp ?>
-			<?php $editurl = $bp->displayed_user->domain; if ( is_user_logged_in() && is_super_admin() ) { ?><a class="button" href="<?php echo $editurl ?>profile/edit/">Admin Edit Profile</a> <a class="button" href="<?php echo $editurl ?>profile/change-avatar/">Admin Upload Headshot</a><?php } ?>
+			<?php $editurl = $bp->displayed_user->domain; if ( is_user_logged_in() && is_super_admin() ) { ?><a class="button" href="<?php echo esc_url( editurl ); ?>profile/edit/">Admin Edit Profile</a> <a class="button" href="<?php echo esc_url( $editurl ); ?>profile/change-avatar/">Admin Upload Headshot</a><?php } ?>
 			</div>
 		<table class="profile-fields">
 			<tr class="field_1 field_first-name">
@@ -109,18 +110,18 @@ a.tooltip span b {
 							
 			<tr class="field_2042 field_job-title">
 				<td class="label">Employment:<span style="color:#990033;font-weight:bold;font-size:14px;">*</span></td>
-				<td class="data"><p><a href="http://cronkitenation.com/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Position at Primary Employer' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=Position at Primary Employer' );?><span>Search directory for:<br /><?php bp_profile_field_data( 'field=Position at Primary Employer' );?></span></a> at <a href="http://cronkitenation.com/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Primary Employer' );?>&quot;" rel="nofollow" class="tooltip"><?php bp_profile_field_data( 'field=Primary Employer' );?><span><strong>Other alumni employed at:</strong><br /><?php bp_profile_field_data( 'field=Primary Employer' );?></span></a></p></td>
+				<td class="data"><p><a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Position at Primary Employer' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=Position at Primary Employer' );?><span>Search directory for:<br /><?php bp_profile_field_data( 'field=Position at Primary Employer' );?></span></a> at <a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Primary Employer' );?>&quot;" rel="nofollow" class="tooltip"><?php bp_profile_field_data( 'field=Primary Employer' );?><span><strong>Other alumni employed at:</strong><br /><?php bp_profile_field_data( 'field=Primary Employer' );?></span></a></p></td>
 			</tr>
 			<?php if ( $secemp = bp_get_profile_field_data( 'field=Position at Secondary Employer' ) ) : ?>
 			<tr class="field_2044 field_job-title-2">
 				<td class="label"></td>
-				<td class="data"><p><a href="http://cronkitenation.com/alumni/?s=&quot;<?php echo $secemp?>&quot;" class="tooltip" rel="nofollow"><?php echo $secemp?><span>Search directory for:<br /><?php echo $secemp?></span></a> at <a href="http://cronkitenation.com/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Secondary Employer' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=Secondary Employer' );?><span>Other alumni employed at:<br /><?php bp_profile_field_data( 'field=Secondary Employer' );?></span></a></p></td>
+				<td class="data"><p><a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php echo $secemp?>&quot;" class="tooltip" rel="nofollow"><?php echo $secemp?><span>Search directory for:<br /><?php echo $secemp?></span></a> at <a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_profile_field_data( 'field=Secondary Employer' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=Secondary Employer' );?><span>Other alumni employed at:<br /><?php bp_profile_field_data( 'field=Secondary Employer' );?></span></a></p></td>
 			</tr>
 			<?php endif ?>
 			<tr class="field_1524 field_city">		
 					<td class="label">Location:<span style="color:#990033;font-weight:bold;font-size:14px;">*</span></td>	
 					<td class="data">
-							<a href="http://cronkitenation.com/alumni/?s=&quot;<?php bp_profile_field_data( 'field=City' );?>, <?php bp_profile_field_data( 'field=U.S. State / Territory' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=City' );?><span>Other alumni employed in:<br /><?php bp_profile_field_data( 'field=City' );?></span></a><?php $state = bp_get_member_profile_data( "field=U.S. State / Territory" ); if ( $state == "Washington D.C." ) {} elseif ($state =="Outside U.S.") {} else { ?>, <a href="http://cronkitenation.com/alumni/?s=<?php echo $state ?>" class="tooltip" rel="nofollow"><?php echo $state ?><span>Other alumni living in:<br /><?php echo $state ?></span></a><?php } ?>, <a href="http://cronkitenation.com/alumni/?s=&quot;<?php bp_member_profile_data( 'field=Country' );?>&quot;" class="tooltip" rel="nofollow"><span>Other alumni living in:<br /><?php bp_profile_field_data( 'field=Country' );?></span><?php echo bp_member_profile_data( 'field=Country' );?></a></p></td>
+							<a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_profile_field_data( 'field=City' );?>, <?php bp_profile_field_data( 'field=U.S. State / Territory' );?>&quot;" class="tooltip" rel="nofollow"><?php bp_profile_field_data( 'field=City' );?><span>Other alumni employed in:<br /><?php bp_profile_field_data( 'field=City' );?></span></a><?php $state = bp_get_member_profile_data( "field=U.S. State / Territory" ); if ( $state == "Washington D.C." ) {} elseif ($state =="Outside U.S.") {} else { ?>, <a href="<?php echo esc_url( $url ); ?>/alumni/?s=<?php echo $state ?>" class="tooltip" rel="nofollow"><?php echo $state ?><span>Other alumni living in:<br /><?php echo $state ?></span></a><?php } ?>, <a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php bp_member_profile_data( 'field=Country' );?>&quot;" class="tooltip" rel="nofollow"><span>Other alumni living in:<br /><?php bp_profile_field_data( 'field=Country' );?></span><?php echo bp_member_profile_data( 'field=Country' );?></a></p></td>
 			</tr>
 			
 			<tr class="field_173 field_years-of-graduation">
@@ -128,9 +129,9 @@ a.tooltip span b {
 				<?php
 				$gyear = bp_get_profile_field_data( 'field=Graduating Class' );
 				?>
-				<td class="data"><p><a href="http://cronkitenation.com/alumni/?s=<?php echo $gyear[0];?>" rel="nofollow" class="tooltip">
+				<td class="data"><p><a href="<?php echo esc_url( $url ); ?>/alumni/?s=<?php echo $gyear[0];?>" rel="nofollow" class="tooltip">
 				<?php echo $gyear[0];?><span><strong>Search alumni directory for:</strong><br />Class of <?php echo $gyear[0];?></span></a><?php if ($gyear[1] != '') { ?>,
-				<a href="http://cronkitenation.com/alumni/?s=<?php echo $gyear[1];?>" rel="nofollow" class="tooltip">
+				<a href="<?php echo esc_url( $url ); ?>/alumni/?s=<?php echo $gyear[1];?>" rel="nofollow" class="tooltip">
 				<?php echo $gyear[1];?><span><strong>Search alumni directory for:</strong><br />Class of <?php echo $gyear[1];?></span></a> <?php } ?>
 				</p></td>
 			</tr>
@@ -138,9 +139,9 @@ a.tooltip span b {
 			<tr class="field_304 field_degree">	
 				<td class="label">Degree:</td>
 				<?php $degree = bp_get_profile_field_data('field=Degree'); ?>
-				<td class="data"><a href="http://cronkitenation.com/alumni/?s=&quot;<?php echo $degree[0]; ?>&quot;" rel="nofollow" class="tooltip">
+				<td class="data"><a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php echo $degree[0]; ?>&quot;" rel="nofollow" class="tooltip">
 				<?php echo $degree[0];?><span><strong>Search directory for:</strong><br /><?php echo $degree[0];?></span></a><?php if ($degree[1] != '') { ?>,
-				<a href="http://cronkitenation.com/alumni/?s=&quot;<?php echo $degree[1];?>&quot;" rel="nofollow" class="tooltip">
+				<a href="<?php echo esc_url( $url ); ?>/alumni/?s=&quot;<?php echo $degree[1];?>&quot;" rel="nofollow" class="tooltip">
 				<?php echo $degree[1];?><span><strong>Search directory for:</strong><br /><?php echo $degree[1];?></span></a> <?php } ?>
 				</td>
 			</tr>
@@ -196,7 +197,9 @@ a.tooltip span b {
 			<tr class="field_2044 field_twitter">	
 				<td class="label">Twitter:</td>
 				<td class="data">
-				<a href="https://twitter.com/<?php echo $twitter ?>" class="twitter-follow-button" data-show-count="true" data-size="large" target="_blank">Loading Twitter...</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+				<a href="https://twitter.com/<?php echo esc_url( $twitter ); ?>" class="twitter-follow-button" data-show-count="true" data-size="large" target="_blank">Loading Twitter...</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</td>
 			</tr>
 			<?php endif ?>
 			
@@ -210,21 +213,21 @@ a.tooltip span b {
 			<?php if ( $persurl = bp_get_profile_field_data( 'field=Personal Website URL' ) ) : ?>
 			<tr class="field_2046 field_personal-website-url">	
 				<td class="label">Personal Website:</td>
-				<td class="data"><a href="<?php echo esc_url( $persurl ); ?>" target="_blank"><?php echo $persurl ?></a></td>
+				<td class="data"><a href="<?php echo esc_url( $persurl ); ?>" target="_blank"><?php echo esc_url( $persurl ); ?></a></td>
 			</tr>
 			<?php endif ?>
 			
 			<?php if ( $portfoliourl = bp_get_profile_field_data( 'field=Web Portfolio URL' ) ) : ?>
 			<tr class="field_2046 field_personal-website-url">	
 				<td class="label">Web Portfolio:</td>
-				<td class="data"><a href="<?php echo esc_url( $portfoliourl ); ?>" target="_blank"><?php echo $portfoliourl ?></a></td>
+				<td class="data"><a href="<?php echo esc_url( $portfoliourl ); ?>" target="_blank"><?php echo esc_url( $portfoliourl ); ?></a></td>
 			</tr>
 			<?php endif ?>
 			
 			<?php if ( $empurl = bp_get_profile_field_data( 'field=Employer Website URL' ) ) : ?>
 			<tr class="field_2046 field_personal-website-url">	
 				<td class="label">Employer's Website:</td>
-				<td class="data"><a href="<?php echo esc_url( $empurl ); ?>" target="_blank"><?php echo $empurl ?></a></td>
+				<td class="data"><a href="<?php echo esc_url( $empurl ); ?>" target="_blank"><?php echo esc_url( $empurl ); ?></a></td>
 			</tr>
 			<?php endif ?>
 
@@ -237,7 +240,7 @@ a.tooltip span b {
 
 </div>
 <?php if ( $RSSfeed = bp_get_profile_field_data( 'field=RSS Feed' ) ) : ?>	
-<h2 style="float:left;display:inline;padding-top:10px;"><?php bp_profile_field_data( 'field=First Name' );?>'s Latest Stories</h2><a href="<?php echo $RSSfeed; ?>"><img style="display:inline;float:right;height:32px;width:32px;" src="http://cronkitenation.com/wp-content/plugins/buddypress/bp-themes/bp-default/members/single/profile/rss.png" /></a><hr>
+<h2 style="float:left;display:inline;padding-top:10px;"><?php bp_profile_field_data( 'field=First Name' );?>'s Latest Stories</h2><a href="<?php echo esc_url( $RSSfeed ); ?>"><img style="display:inline;float:right;height:32px;width:32px;" src="<?php echo esc_url( $url ); ?>/wp-content/plugins/buddypress/bp-themes/bp-default/members/single/profile/rss.png" /></a><hr>
 <?php include_once(ABSPATH.WPINC.'/rss.php'); // path to include built-in WordPress RSS script
 $RSSurl = $RSSfeed;
 $feed = fetch_rss($RSSurl); // specify feed url
@@ -247,7 +250,7 @@ $items = array_slice($feed->items, 0, 5); // specify first and last item
 <?php if (!empty($items)) : ?>
 
 <?php foreach ($items as $item) : ?>
-<h4><a href="<?php echo wp_filter_kses($item['link']); ?>" target="_blank"><?php echo wp_specialchars($item['title']); ?></a></h4>
+<h4><a href="<?php echo esc_url( wp_filter_kses($item['link']) ); ?>" target="_blank"><?php echo wp_specialchars($item['title']); ?></a></h4>
 <?php if (isset($item['description'])) : ?>
 <p>Published on <?php $pubdate = substr($item['pubdate'], 0, 16); echo $pubdate; ?> <br /><?php echo $item['description']; ?></p>
 <?php endif; ?>

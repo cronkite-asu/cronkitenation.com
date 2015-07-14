@@ -16,17 +16,13 @@
 <?php do_action( 'bp_before_members_loop' ) ?>
 <?php if ( bp_has_members(bp_ajax_querystring( 'members').'&type=alphabetical') ) : ?>
 
-
 	<div id="pag-top" class="pagination">
-	
-
 
 		<div class="pag-count" id="member-dir-count-top">
 
    <?php bp_members_pagination_count(); ?> 
 
 		</div>
-			
 
 		<div class="pagination-links" id="member-dir-pag-top">
 

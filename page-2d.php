@@ -2,14 +2,10 @@
 /*
  * Template Name: 2D Google Fallback Map
  */
+$url = home_url();
+get_header();
 
-get_header(); ?>
-<script src="http://www.google.com/jsapi"></script> 
-<script type="text/javascript">google.load("jquery", "1");</script> 
-<script type="text/javascript"> 
-google.load("maps", "3", {other_params:"sensor=false"});
-</script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() ; ?>/blogs/infowindow.js"></script>
+?>
 
 	<div id="content">
 		<div class="padder one-column">
@@ -21,13 +17,31 @@ google.load("maps", "3", {other_params:"sensor=false"});
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 				<h2 class="pagetitle"><?php the_title(); ?></h2>
-				<h6 style="float:right;text-align:right;display:inline;margin-top:-20px;"><a href="http://cronkitenation.com?3d">3-D Map &raquo;</a></h6>
+				<h6 style="float:right;text-align:right;display:inline;margin-top:-20px;"><a href="<?php echo esc_url( $url ); ?>?3d">3-D Map &raquo;</a></h6>
 <br />
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<div class="entry">
 						<div id="map_canvas" style="width:100%; height:600px;"></div>
+					</div>
 
+				</div>
+
+			<?php endwhile; endif; ?>
+
+		</div><!-- .page -->
+
+		<?php do_action( 'bp_after_blog_page' ); ?>
+
+		</div><!-- .padder -->
+	</div><!-- #content -->
+
+<?php get_footer(); ?>
+
+<script type="text/javascript"> 
+	google.load("jquery", "1");
+	google.load("maps", "3", {other_params:"sensor=false"});
+</script>
 <script>
 if (!Array.prototype.indexOf) {
 	Array.prototype.indexOf = function(obj, start) {
@@ -66,7 +80,7 @@ function init() {
   map = new google.maps.Map(document.getElementById('map_canvas'), options);
 	
   <?php if (array_key_exists("map_search", $_GET)){ ?>
-	$.getJSON("/filter_geojson.php<?php if (array_key_exists("map_search", $_GET)){echo "?search=".$_GET["map_search"];}?>", process_alumns);
+	$.getJSON("/filter_geojson.php<?php if (array_key_exists("map_search", $_GET)){echo urlencode( "?search=" . $_GET["map_search"] );}?>", process_alumns);
   <?php } else { ?>
 	$.getJSON("/alumns.json", process_alumns);
   <?php } ?>  
@@ -135,25 +149,7 @@ function makeMarker(alumn) {
       })(marker, i));
 }
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	init();
 });
 </script>
-
-
-
-
-					</div>
-
-				</div>
-
-			<?php endwhile; endif; ?>
-
-		</div><!-- .page -->
-
-		<?php do_action( 'bp_after_blog_page' ); ?>
-
-		</div><!-- .padder -->
-	</div><!-- #content -->
-
-<?php get_footer(); ?>

@@ -1,11 +1,12 @@
 <?php get_header( 'buddypress' ); ?>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<?php $url = home_url(); ?>
+
 <script type="text/javascript">
-	$(document).ready(function(){
-		$("form#signup_form").submit(function(e){
-			var full_name = $('input#field_1').val().toLowerCase() + $('input#field_1201').val().toLowerCase();
+	jQuery(document).ready(function(){
+		jQuery("form#signup_form").submit(function(e){
+			var full_name = jQuery('input#field_1').val().toLowerCase() + jQuery('input#field_1201').val().toLowerCase();
 			full_name = full_name.replace(/[^a-zA-Z 0-9]+/g,'');
-			$('input#signup_username').val(full_name);
+			jQuery('input#signup_username').val(full_name);
 			return true;
 		});
 	});
@@ -33,7 +34,7 @@
 
 				<h2>Create a Cronkite Nation Alumni Account </h2>
 				
-				<h4>But wait, are you <a href="http://cronkitenation.com/alumni">already registered</a>? If so, <a href="http://cronkitenation.com/claim">claim</a> your existing account.</h4>
+				<h4>But wait, are you <a href="<?php echo esc_url( $url ); ?>/alumni">already registered</a>? If so, <a href="<?php echo esc_url( $url ); ?>/claim">claim</a> your existing account.</h4>
 			
 				
 				<h5 style="float:right;"><span style="color:#990033;font-weight:bold;font-size:14px;">*</span> These fields are required.</h5><br />
@@ -398,7 +399,7 @@
 					<h3>Welcome!</h3>
 					<p>We've created your account. You can now login using the email and password you signed-up with.<br /> NOTE: it may take up to 20 minutes for you to display on the Alumni Map.</p>
 					
-					<h6>Be sure to <a href="http://cronkitenation.com/faqs/how-can-i-upload-a-headshot">upload your headshot</a> after you login</h6>
+					<h6>Be sure to <a href="<?php echo esc_url( $url ); ?>/faqs/how-can-i-upload-a-headshot">upload your headshot</a> after you login</h6>
 
 				<?php do_action( 'bp_after_registration_confirmed' ); ?>
 

@@ -1,4 +1,5 @@
 <?php
+$url = home_url();
 
 /**
  * BuddyPress - Members Directory
@@ -16,7 +17,7 @@ get_header( 'buddypress' ); ?>
 		
 		<h2>Alumni Directory</h2>
 		<div style="float:right;"><?php do_action( 'bp_before_directory_members' ); ?>
-					<form role="search" method="get" id="searchform" action="<?php echo home_url(); ?>/alumni">
+					<form role="search" method="get" id="searchform" action="<?php echo esc_url( $url ); ?>/alumni">
 				<input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
 				<input type="submit" id="searchsubmit" value="Search Alumni Directory" />
 				<?php do_action( 'bp_blog_search_form' ); ?><br />
@@ -24,13 +25,15 @@ get_header( 'buddypress' ); ?>
 
 		<form action="" method="post" id="members-directory-form" class="dir-form">
 
-			
-
-			
-			<h6><a href="http://cronkitenation.com/alumni/?s=Phoenix">Alumni in Phoenix</a> | <a href="http://cronkitenation.com/alumni/?s=Arizona">Alumni in Arizona</a> | <a href="http://cronkitenation.com/alumni/?s=&quot;State: Outside U.S.&quot;">Alumni Outside U.S.</a></h6>
+			<h6>
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_1524=') . urlencode( 'Phoenix' ); ?>" >Alumni in Phoenix</a>
+				|
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_1525=') . urlencode( 'Arizona' ); ?>" >Alumni in Arizona</a>
+				|
+				<a href="<?php echo esc_url( $url . '/alumni/?bp_profile_search&field_1525=') . urlencode( 'Outside U.S.' ) ; ?>" >Alumni Outside U.S.</a>
+			</h6>
 			<br />
 			<?php do_action( 'bp_before_directory_members_content' ); ?>
-
 
 			<br />
 
