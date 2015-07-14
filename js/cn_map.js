@@ -540,7 +540,7 @@ function process_alumns(json) {
 }
 
 jQuery(document).ready(function(){
-	d3.json( map_params.stylesheet_directory + "/blogs/world-countries.json", function(collection) {
+	d3.json( map_params.stylesheet_directory + "/js/world-countries.json", function(collection) {
 		feature = svg.selectAll("path")
 			.data(collection.features)
 		  .enter().append("svg:path")
