@@ -45,7 +45,7 @@ function cronkitenation_login_logo() {
     echo '<style type="text/css">';
 	echo 'h1 a {';
 	echo 'background-image:url(';
-	echo get_stylesheet_directory_uri() . '/_inc/images/cronkite.png';
+	echo get_stylesheet_directory_uri() . '/images/cronkite.png';
 	echo ') !important;';
 	echo 'background-size: auto !important;';
 	echo 'width: initial !important;';

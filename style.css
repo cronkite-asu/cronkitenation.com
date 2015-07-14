@@ -136,7 +136,7 @@ textarea {
 2.2 - Header
 --------------------------------------------------------------*/
 #hbg {
-background:url(_inc/images/header4.jpg);
+background:url(images/header4.jpg);
 height:100px;
 
 }
@@ -240,7 +240,7 @@ div#sidebar div#sidebar-mapload {
 background-color:#000;
 display:block;
 height:140px;
-background:url(_inc/images/ajax-loader.gif);
+background:url(images/ajax-loader.gif);
 background-position:bottom center;
 background-repeat:no-repeat;
 }
@@ -361,7 +361,7 @@ margin-left:64px;
 margin-bottom:8px;
 }
 div#sidebar div#sidebar-back {
-background-image:url(_inc/images/controls/previous.png);
+background-image:url(images/controls/previous.png);
 background-repeat: no-repeat;
 display:inline-block;
 padding : 0px;
@@ -374,7 +374,7 @@ background-position-y: -46px;
 }
 
 div#sidebar div#sidebar-pp {
-background:url(_inc/images/controls/pp2.png);
+background:url(images/controls/pp2.png);
 display:inline-block;
 height: 42px;
 width : 100px;
@@ -395,49 +395,49 @@ div#sidebar div#sidebar-pp.play:hover{
 }
 
 div#sidebar div#sidebar-forward {
-background:url(_inc/images/controls/forward.png);
+background:url(images/controls/forward.png);
 display:inline-block;
 height: 46px;
 width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-forward:hover {
-background:url(_inc/images/controls/forward.png);
+background:url(images/controls/forward.png);
 background-position:bottom;
 height: 46px;
 width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-zin {
-background:url(_inc/images/controls/zoomin.png);
+background:url(images/controls/zoomin.png);
 display:inline-block;
 height: 46px;
 width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-zin:hover, div#sidebar div#sidebar-zin.active {
-background:url(_inc/images/controls/zoomin.png);
+background:url(images/controls/zoomin.png);
 background-position:bottom;
 height: 46px;
 width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-zout {
-background:url(_inc/images/controls/zoomout.png);
+background:url(images/controls/zoomout.png);
 display:inline-block;
 height: 46px;
 width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-zout:hover, div#sidebar div#sidebar-zout.active {
-background:url(_inc/images/controls/zoomout.png);
+background:url(images/controls/zoomout.png);
 background-position:bottom;
 height: 46px;
 width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-up {
-background:url(_inc/images/controls/up.png);
+background:url(images/controls/up.png);
 display:inline-block;
 width:100%;
 margin-left:auto;
@@ -447,7 +447,7 @@ width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-up:hover {
-background:url(_inc/images/controls/up.png);
+background:url(images/controls/up.png);
 background-position:bottom;
 width:100%;
 margin-left:auto;
@@ -457,7 +457,7 @@ width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-down {
-background:url(_inc/images/controls/down.png);
+background:url(images/controls/down.png);
 display:inline-block;
 width:100%;
 margin-left:auto;
@@ -468,7 +468,7 @@ width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-down:hover {
-background:url(_inc/images/controls/down.png);
+background:url(images/controls/down.png);
 background-position:bottom;
 margin-left:auto;
 margin-right:auto;
@@ -478,7 +478,7 @@ width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-left {
-background:url(_inc/images/controls/left.png);
+background:url(images/controls/left.png);
 display:inline-block;
 margin-left:40px;
 float:left;
@@ -487,7 +487,7 @@ width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-left:hover {
-background:url(_inc/images/controls/left.png);
+background:url(images/controls/left.png);
 background-position:bottom;
 float:left;
 margin-left:40px;
@@ -496,7 +496,7 @@ width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-right {
-background:url(_inc/images/controls/right.png);
+background:url(images/controls/right.png);
 display:inline-block;
 float:right;
 margin-right:40px;
@@ -505,7 +505,7 @@ width : 47px;
 overflow : hidden;
 }
 div#sidebar div#sidebar-right:hover {
-background:url(_inc/images/controls/right.png);
+background:url(images/controls/right.png);
 background-position:bottom;
 float:right;
 margin-right:40px;
